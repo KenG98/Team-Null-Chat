@@ -1,0 +1,17 @@
+<template name="links">
+	<form class="new-link">
+		Link: <input type="text" name="linkURL" placeholder="enter a link" /> <br>
+		Description: <input type="text" name="linkDescription" placeholder="describe the link" />
+		<input type="submit" text="Submit">
+	</form>
+	<br>
+	{{#each links}}
+		{{> link}}
+	{{/each}}
+</template>
+
+<template name="link">
+	<hr>
+	Link: <a href="{{linkURL}}">{{linkURL}}</a> <br>
+	what: {{linkDescription}}
+</template>

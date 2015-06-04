@@ -1,0 +1,15 @@
+<template name="chat">
+	<form class="new-message">
+		Message: <input type="text" name="messageContent" placeholder="Type to send" /> 
+		<input type="submit">
+	</form>
+	<br>
+	{{#each messages}}
+		{{> message}}
+	{{/each}}
+</template>
+
+<template name="message">
+	<hr>
+	{{messageText}}
+</template>

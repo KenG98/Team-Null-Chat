@@ -3,9 +3,10 @@
 </head>
 
 <body>
-  <h1>Team Null's online room</h1>
-  <a href="/chat"><button>Message Board</button></a>
-  <a href="/links"><button>Useful Links</button></a>
+  <a href="{{pathFor 'home'}}"><h1>Team Null's online room</h1></a>
+  <a href="{{pathFor 'chat'}}"><button>Message Board</button></a>
+  <a href="{{pathFor 'links'}}"><button>Useful Links</button></a>
+  <a href="{{pathFor 'secure'}}"><button>Secure Page</button></a>
   <hr><hr>
 </body>
 
@@ -13,38 +14,4 @@
 	<p> This is for Team Null to have a convenient place to brainstorm. <br> 
 		We can easily chat on the Message Board and share important links on the Useful Links section 
 	</p>
-</template>
-
-<template name="chat">
-	<form class="new-message">
-		Message: <input type="text" name="messageContent" placeholder="Type to send" /> 
-		<input type="submit">
-	</form>
-	<br>
-	{{#each messages}}
-		{{> message}}
-	{{/each}}
-</template>
-
-<template name="message">
-	<hr>
-	{{messageText}}
-</template>
-
-<template name="links">
-	<form class="new-link">
-		Link: <input type="text" name="linkURL" placeholder="enter a link" /> <br>
-		Description: <input type="text" name="linkDescription" placeholder="describe the link" />
-		<input type="submit" text="Submit">
-	</form>
-	<br>
-	{{#each links}}
-		{{> link}}
-	{{/each}}
-</template>
-
-<template name="link">
-	<hr>
-	Link: <a href="{{linkURL}}">{{linkURL}}</a> <br>
-	what: {{linkDescription}}
 </template>

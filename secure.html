@@ -1,0 +1,21 @@
+<template name="secure">
+	{{#if secureAccess}}
+		{{> securityPassed}}
+	{{else}}
+		{{> enterPassword}}
+	{{/if}}
+</template>
+
+	
+<template name="enterPassword">
+	<form class="enter-password">
+		Enter the password: <input type="text" name="enteredPass" placeholder="Enter Password" /> 
+		<input type="submit">
+	</form>
+	<br>
+</template>
+
+
+<template name="securityPassed">
+	Nice! You're in the secret zone
+</template>
